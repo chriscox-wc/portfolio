@@ -1,0 +1,11 @@
+const fs=require('node:fs');
+const path=require('node:path');
+const {contact}=require('./content.json');
+const core=require('./dist/card-core.js');
+const qrcode=require('./dist/vendor/qrcode.js');
+const assets=path.join(__dirname,'dist/assets');
+const siteUrl=(process.env.SITE_URL || contact.siteUrl).replace(/\/+$/,'')+'/';
+fs.writeFileSync(path.join(assets,'chris-cox.vcf'),core.vcard(contact,siteUrl));
+const qr=qrcode(0,'M');
+qr.addData(core.urls(siteUrl).card);qr.make();
+fs.writeFileSync(path.join(assets,'chris-cox-card-qr.svg'),qr.createSvgTag({cellSize:6,margin:24,scalable:true}));

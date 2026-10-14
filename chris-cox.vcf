@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Cox;Christopher;;;
+FN:Chris Cox
+ORG:Westminster College;Computing and Digital Technology
+TITLE:Assistant Professor & Department Chair
+EMAIL;TYPE=INTERNET,WORK:Chris.Cox@wcmo.edu
+TEL;TYPE=WORK,VOICE:+15735925525
+ADR;TYPE=WORK:;;501 Westminster Avenue;Fulton;Missouri;65251;United States
+URL:http://localhost:8000/
+NOTE:Web developer and educator.\nDigital business card: http://localhost:8
+ 000/card/
+END:VCARD

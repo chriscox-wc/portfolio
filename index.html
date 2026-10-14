@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="Chris Cox is a web developer, educator, and department chair at Westminster College. Explore an interactive CV, selected work, live coding demonstrations, and scholarship.">
+  <meta property="og:title" content="Chris Cox — Ideas into code. Code into possibility.">
+  <meta property="og:description" content="Web development, computing education, and digital culture. A portfolio you can explore, not just read.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:8000/">
+  <meta property="og:image" content="http://localhost:8000/assets/chris-cox-portrait.webp">
+  <meta property="og:image:alt" content="Chris Cox in a navy suit">
+  <link rel="canonical" href="http://localhost:8000/">
+  <title>Chris Cox — Developer, Educator & Researcher</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('cc-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{}</script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="card.css">
+  <script src="data.js" defer></script>
+  <script src="logic.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="vendor/qrcode.js" defer></script>
+  <script src="card-core.js" defer></script>
+  <script src="card.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="wordmark" href="#top" aria-label="Chris Cox, home"><span class="monogram" aria-hidden="true">c<span>c</span>.</span><span>CHRIS COX</span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="#work">Selected work</a><a href="#playground">Playground</a><a href="#scholarship">Scholarship</a><a href="#cv">CV</a></nav>
+    <div class="header-actions"><button id="theme-toggle" class="icon-button" aria-label="Switch color theme" title="Switch color theme"><span aria-hidden="true">◐</span></button><a class="contact-link" href="card/" data-business-card>My business card <span aria-hidden="true">↗</span></a></div>
+    <details class="mobile-menu"><summary>Menu <span aria-hidden="true">+</span></summary><nav aria-label="Mobile navigation"><a href="#work">Selected work</a><a href="#playground">Playground</a><a href="#scholarship">Scholarship</a><a href="#cv">Curriculum vitae</a><a href="#contact">Contact</a><a href="card/" data-business-card>My business card ↗</a></nav></details>
+  </div>
+</header>
+<main id="main">
+  <section id="top" class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> EDUCATOR. DEVELOPER. CREATIVE THINKER.</p>
+      <h1 id="hero-title">Ideas into code.<br>Code into<br><em>possibility.</em></h1>
+      <p class="hero-intro">I’m <strong>Chris Cox.</strong> I build digital experiences and teach people how to create their own.</p>
+      <p class="hero-role">Assistant Professor & Department Chair<br>Computing and Digital Technology · Westminster College</p>
+      <div class="hero-ctas"><a class="button primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a><a class="text-link" href="#cv">Explore my CV <span aria-hidden="true">↓</span></a></div>
+      <p class="small mono location">FULTON, MISSOURI <span aria-hidden="true">/</span> AT THE INTERSECTION OF PEOPLE & TECHNOLOGY</p>
+    </div>
+    <figure class="hero-portrait">
+      <img src="assets/chris-cox-portrait.webp" width="1024" height="1536" alt="Chris Cox in a navy suit" fetchpriority="high">
+      <figcaption><div><span class="mono">THE PERSON BEHIND THE WORK</span><strong>Chris Cox.</strong></div><a href="card/" data-business-card aria-label="Open Chris Cox’s business card">↗</a></figcaption>
+    </figure>
+  </section>
+  <section class="evidence-strip" aria-label="Selected professional evidence">
+    <div class="wrap evidence-grid"><div><strong>2018<span> → today</span></strong><p>From web development<br>to department leadership</p></div><div><strong>4.68<span> / 5</span></strong><p>“Excellent teacher” rating<br><small>IDEA · Fall 2021–Spring 2026*</small></p></div><div><strong>57</strong><p>Students advised cumulatively<br><small>As of Fall 2026</small></p></div><div><strong>2<span> honors</span></strong><p>Junior Faculty & Buschman Awards<br><small>Westminster College · 2024</small></p></div></div>
+    <p class="metric-note wrap">*Response-weighted mean across available reports. <a href="#cv" data-cv-query="Teaching evaluation">View the evidence →</a></p>
+  </section>
+  <section id="work" class="section wrap" aria-labelledby="work-title">
+    <div class="section-heading"><div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="work-title">Built for people.<br><em>Made to work.</em></h2></div><p>From a local business to a college classroom, I bring design, technology, and communication together.</p></div>
+    <div class="work-grid">
+      <article class="project-feature">
+        <a class="adams-art" href="https://www.adamsk9llc.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Adams K9 website, opens in a new tab"><img src="assets/adams-k9.webp" width="900" height="1200" alt="German shepherd featured by Adams K9" loading="lazy"><div class="adams-overlay"><p class="mono">ADAMS K9 <span>MISSOURI</span></p><h3>Training<br>with purpose.</h3><div><span class="project-pill">CLIENT WEBSITE · 2026</span><span class="circle-arrow" aria-hidden="true">↗</span></div></div></a>
+        <div class="project-description"><div><h3>Adams K9</h3><p>A service business website with a clear path from discovery to inquiry.</p></div><button class="text-link" data-open="adams-dialog">Project notes <span aria-hidden="true">↗</span></button></div><div class="tags"><span>Web design</span><span>Interactive tools</span><span>Wix delivery</span></div>
+      </article>
+      <div class="supporting-projects">
+        <article class="small-project"><div class="project-symbol" aria-hidden="true"><span>&lt;</span><span>/&gt;</span></div><p class="eyebrow">WEB & DIGITAL COMMUNICATION</p><h3>From building the site<br>to leading the platform.</h3><p>Web Developer, then Director of Web and Social Media at Westminster College.</p><button class="text-link" data-open="westminster-dialog">Explore the experience <span aria-hidden="true">↗</span></button><span class="project-year mono">2018–2020</span></article>
+        <article class="small-project teaching-project"><div class="course-symbol mono" aria-hidden="true">C<span>++</span></div><p class="eyebrow">LEARNING EXPERIENCE DESIGN</p><h3>Make the difficult<br>feel approachable.</h3><p>Online programming instruction built around scaffolded modules and an applied project.</p><a class="text-link" href="#teaching">Explore my teaching <span aria-hidden="true">↗</span></a><span class="project-year mono">CSA 104 · 2026</span></article>
+      </div>
+    </div>
+    <div class="proof-links"><p class="mono">FOLLOW A SKILL INTO MY CV</p><div><a href="#cv" data-cv-query="web">Web development ↗</a><a href="#cv" data-cv-query="design">Design ↗</a><a href="#cv" data-cv-query="cybersecurity">Cybersecurity ↗</a><a href="#cv" data-cv-query="AI">AI & education ↗</a><a href="#cv" data-cv-query="Leadership">Leadership ↗</a></div></div>
+  </section>
+  <section id="playground" class="playground" aria-labelledby="play-title">
+    <div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">02 / THE PLAYGROUND</p><h2 id="play-title">Don’t just read it.<br><em>Run it.</em></h2></div><p>Working experiments in design and computing. Adjust an interface, then step through the logic behind an algorithm.</p></div>
+      <div class="design-lab-row">
+        <div class="design-lab-copy"><span class="demo-number mono">EXPERIMENT 01</span><h3>Every detail is<br>a design decision.</h3><p>Try a different color. Soften the corners. Switch to a compact layout. Watch one component respond in real time.</p><div class="design-lab-skills"><span>Responsive layout</span><span>Component state</span><span>CSS design tokens</span></div></div>
+    <div class="hero-studio" aria-label="Interactive design workbench">
+      <div class="studio-top"><span class="mono"><span class="live-dot" aria-hidden="true"></span> LIVE DESIGN WORKBENCH</span><span class="mono dim">01 / 03</span></div>
+      <div class="studio-caption"><p>This portfolio starts with you.</p><span>Change a few things. See the code respond.</span></div>
+      <div class="preview-stage">
+        <div id="design-preview" class="design-preview">
+          <div class="mini-nav"><strong>studio<span>↗</span></strong><span>DESIGNED TO ADAPT</span></div>
+          <div class="mini-content"><div><p class="mini-label">A LITTLE EXPERIMENT</p><h2>Make the<br>next <em>thing.</em></h2><button id="mini-action">Try this button <span aria-hidden="true">↗</span></button></div><div class="design-sculpture" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+          <div class="mini-footer"><span id="mini-message" aria-live="polite">Small details. Better experiences.</span><span aria-hidden="true">✳</span></div>
+        </div>
+      </div>
+      <div class="studio-controls">
+        <div><span class="control-label" id="color-label">Accent</span><div class="swatches" role="group" aria-labelledby="color-label"><button class="swatch violet" data-accent="#5b44d5" aria-label="Violet accent" aria-pressed="true"></button><button class="swatch rust" data-accent="#ac3e26" aria-label="Terracotta accent" aria-pressed="false"></button><button class="swatch forest" data-accent="#21644f" aria-label="Forest accent" aria-pressed="false"></button></div></div>
+        <div><label class="control-label" for="radius">Corners <output id="radius-value" for="radius">16px</output></label><input id="radius" type="range" min="0" max="32" value="16" step="2"></div>
+        <div><span class="control-label" id="layout-label">Layout</span><div class="segmented" role="group" aria-labelledby="layout-label"><button data-layout="wide" aria-pressed="true" aria-label="Wide layout"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="3" width="16" height="11" rx="2"/><path d="M7 17h6M10 14v3"/></svg></button><button data-layout="compact" aria-pressed="false" aria-label="Compact layout"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="5" y="2" width="10" height="16" rx="2"/><path d="M9 15h2"/></svg></button></div></div>
+      </div>
+      <div class="code-strip"><span class="code-dot" aria-hidden="true"></span><code id="live-css">--accent: #5b44d5; border-radius: 16px;</code><button id="design-reset" title="Reset design" aria-label="Reset design">↺</button></div>
+    </div>
+      </div>
+      <div class="algorithm-layout">
+        <div class="algorithm-explainer"><span class="demo-number mono">EXPERIMENT 02</span><h3>A little order<br>from a little chaos.</h3><p>Insertion sort builds a sorted section one value at a time. Watch each comparison, swap, and decision happen.</p><div class="legend"><span><i class="legend-sorted"></i> Sorted section</span><span><i class="legend-active"></i> Comparing or swapping</span></div><details class="code-details"><summary>See the C++ idea <span aria-hidden="true">+</span></summary><pre><code>for (int i = 1; i &lt; n; ++i) {
+  int j = i;
+  while (j &gt; 0 &amp;&amp; a[j - 1] &gt; a[j]) {
+    swap(a[j - 1], a[j]);
+    --j;
+  }
+}</code></pre><p>The browser runs a JavaScript version of this algorithm. Worst-case time: O(n²). Best-case time: O(n).</p></details></div>
+        <div class="algorithm-panel"><div class="algorithm-toolbar"><span class="mono">INSERTION SORT</span><button id="shuffle" class="dark-text-button">Shuffle <span aria-hidden="true">↻</span></button></div><div id="bars" class="bars" role="img" aria-label="Unsorted values"></div><div class="algorithm-stats mono"><span><b id="comparison-count">0</b> COMPARISONS</span><span><b id="swap-count">0</b> SWAPS</span><span id="step-count">STEP 0</span></div><div class="algorithm-controls"><button id="sort-play" class="button lime">Play <span aria-hidden="true">▶</span></button><button id="sort-step" class="button dark-outline">Step →</button><button id="sort-reset" class="icon-button dark-icon" aria-label="Reset sorting demonstration">↺</button><label for="sort-speed">Speed<input id="sort-speed" type="range" min="1" max="5" value="3"></label></div><p id="sort-note" class="sort-note" aria-live="polite">Start with the first value as the sorted section.</p></div>
+      </div>
+      <div class="playground-footer"><p><span aria-hidden="true">✳</span> Interfaces should help people understand what happens next.</p><button class="text-link" data-open="build-dialog">Inside this portfolio <span aria-hidden="true">↗</span></button></div>
+    </div>
+  </section>
+  <section id="scholarship" class="section wrap" aria-labelledby="scholar-title">
+    <div class="section-heading"><div><p class="eyebrow">03 / SCHOLARSHIP & IDEAS</p><h2 id="scholar-title">Curiosity crosses<br><em>disciplines.</em></h2></div><p>Exploring how people create, learn, and participate in an increasingly digital world.</p></div>
+    <article class="scholar-feature"><div class="fandom-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="fandom-index mono">CULTURE / COMMUNITY / CONNECTION</span><div class="fandom-type">DC<br>COMICS<br><em>fandom.</em></div><span class="fandom-star">✳</span><span class="fandom-bottom mono">A SCHOLARLY CONTRIBUTION IN PREPARATION</span></div><div class="scholar-copy"><span class="status-label"><span class="status-dot" aria-hidden="true"></span> PROPOSAL ACCEPTED</span><h3>DC Comics fandom</h3><p class="scholar-subtitle">An accepted encyclopedia contribution for <em>Pop Culture Fandoms.</em></p><dl><div><dt>Publisher</dt><dd>Bloomsbury</dd></div><div><dt>Editor</dt><dd>Paul Booth</dd></div><div><dt>Status</dt><dd>Entry in preparation</dd></div></dl><p class="scholar-note">Focused on DC Comics fandom. The proposal has been accepted; the manuscript is in preparation.</p><a class="text-link" href="#cv" data-cv-query="DC Comics">View CV entry <span aria-hidden="true">↗</span></a></div></article>
+    <div class="scholarship-row"><div><p class="eyebrow">UPCOMING PRESENTATION / OCT 15, 2026</p><h3>How Much AI Is Too Much?</h3><p>Finding the Co-Creation Threshold Across Disciplines</p></div><div><p>With Tyler Sorg<br>MACTE Fall Conference · Columbia, Missouri</p><a class="text-link" href="#cv" data-cv-query="MACTE">Explore scholarship <span aria-hidden="true">↗</span></a></div></div>
+  </section>
+  <section id="teaching" class="teaching-section" aria-labelledby="teaching-title"><div class="wrap teaching-layout"><div><p class="eyebrow">04 / THE CLASSROOM</p><h2 id="teaching-title">Building skills.<br><em>Opening doors.</em></h2><p>My teaching spans the technical and the creative—from programming and security to visual communication.</p><figure class="teaching-photo"><img src="assets/chris-cox-teaching.webp" width="1102" height="621" alt="Chris Cox teaching in a Westminster College computer classroom" loading="lazy"><figcaption>In the classroom at Westminster College.</figcaption></figure><a class="text-link" href="#cv" data-cv-category="Teaching">Teaching & advising in my CV <span aria-hidden="true">↗</span></a><p class="teaching-footnote">Course titles reflect the catalog or commonly used title during the term taught. These are teaching areas, not current course availability.</p></div><div class="course-explorer"><div class="course-explorer-top"><span class="mono">EXPERIMENT 03 / COURSE EXPLORER</span><span id="course-count" class="mono">16 COURSES</span></div><div class="course-filters" role="group" aria-label="Filter teaching courses"><button data-course="All" aria-pressed="true">All</button><button data-course="Computing" aria-pressed="false">Computing</button><button data-course="Cybersecurity" aria-pressed="false">Cybersecurity</button><button data-course="Digital media" aria-pressed="false">Digital media</button></div><div id="courses" class="course-list"><details class="course-item" data-area="Computing"><summary>Programming Logic and Design</summary><p>Logic, programming, and modular problem solving.<span>Computing</span></p></details>
+<details class="course-item" data-area="Computing"><summary>Survey of Computer Science</summary><p>Core ideas and applications across computing.<span>Computing</span></p></details>
+<details class="course-item" data-area="Computing"><summary>Software Design and Engineering Concepts</summary><p>Software structure, design, and development.<span>Computing</span></p></details>
+<details class="course-item" data-area="Cybersecurity"><summary>Introduction to Cybersecurity</summary><p>Foundations of protecting systems and information.<span>Cybersecurity</span></p></details>
+<details class="course-item" data-area="Cybersecurity"><summary>Cybersecurity for Society</summary><p>Security in everyday life and organizations.<span>Cybersecurity</span></p></details>
+<details class="course-item" data-area="Cybersecurity"><summary>Information Security</summary><p>Principles of protecting information.<span>Cybersecurity</span></p></details>
+<details class="course-item" data-area="Cybersecurity"><summary>Information Security Policy</summary><p>Policy, governance, and organizational security.<span>Cybersecurity</span></p></details>
+<details class="course-item" data-area="Cybersecurity"><summary>Digital Forensics</summary><p>Digital evidence and investigative concepts.<span>Cybersecurity</span></p></details>
+<details class="course-item" data-area="Cybersecurity"><summary>Digital Network Security</summary><p>Network protection and security concepts.<span>Cybersecurity</span></p></details>
+<details class="course-item" data-area="Digital media"><summary>Content Creation for the Digital Age</summary><p>Creating content for digital audiences.<span>Digital media</span></p></details>
+<details class="course-item" data-area="Digital media"><summary>Introduction to Digital Media</summary><p>Media forms, platforms, and practices.<span>Digital media</span></p></details>
+<details class="course-item" data-area="Digital media"><summary>Graphic Design</summary><p>Visual communication and design.<span>Digital media</span></p></details>
+<details class="course-item" data-area="Digital media"><summary>Media Design and Human Behavior</summary><p>How people experience and respond to media.<span>Digital media</span></p></details>
+<details class="course-item" data-area="Digital media"><summary>Web Page Design</summary><p>Designing experiences for the web.<span>Digital media</span></p></details>
+<details class="course-item" data-area="Digital media"><summary>Video Production</summary><p>Storytelling through moving images.<span>Digital media</span></p></details>
+<details class="course-item" data-area="Digital media"><summary>Social Media and Marketing</summary><p>Platforms, communication, and digital marketing.<span>Digital media</span></p></details></div><p class="small course-help">Select a course to explore its subject area.</p></div></div></section>
+  <section id="cv" class="section wrap cv-section" aria-labelledby="cv-title">
+    <div class="section-heading"><div><p class="eyebrow">05 / CURRICULUM VITAE</p><h2 id="cv-title">The experience<br><em>behind the work.</em></h2></div><div><div class="cv-portrait-intro"><img src="assets/chris-cox-campus.webp" width="650" height="755" alt="Chris Cox on the Westminster College campus" loading="lazy"><div><strong>Christopher Cox</strong><span>Westminster College</span></div></div><p>Find the experience, scholarship, and skills that matter to you.</p><a href="cv.html" class="text-link" target="_blank" rel="noopener">Full CV / print to PDF <span aria-hidden="true">↗</span></a></div></div>
+    <div class="cv-toolbar"><label class="search-box" for="cv-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><input id="cv-search" type="search" placeholder="Search skills, roles, or keywords…" autocomplete="off"><span class="search-hint mono">TRY “WEB”</span></label><button class="text-link" id="cv-clear">Reset filters ↺</button></div>
+    <div class="cv-filters" role="group" aria-label="Filter CV categories"><button data-category="All" aria-pressed="false">All</button><button data-category="Experience" aria-pressed="true">Experience</button><button data-category="Education" aria-pressed="false">Education</button><button data-category="Scholarship" aria-pressed="false">Scholarship</button><button data-category="Teaching" aria-pressed="false">Teaching</button><button data-category="Leadership" aria-pressed="false">Leadership & service</button><button data-category="Awards" aria-pressed="false">Awards</button></div>
+    <div class="cv-results-heading"><p id="cv-results-count" class="mono" aria-live="polite">6 EXPERIENCE ENTRIES</p><p class="mono">UPDATED OCTOBER 2026</p></div><div id="cv-results"><article class="cv-entry" data-index="0">
+      <div class="entry-meta"><p>Aug 2024–present</p><span>Experience</span></div>
+      <div><h3>Department Chair</h3><p class="entry-org">Computing and Digital Technology · Westminster College</p><p class="entry-text">Department leadership across computing and digital technology. Curriculum development, program planning, and academic service.</p><div class="tags"><span>Leadership</span><span>Curriculum</span><span>Computing</span></div></div>
+    </article>
+<article class="cv-entry" data-index="1">
+      <div class="entry-meta"><p>Aug 2023–present</p><span>Experience</span></div>
+      <div><h3>Assistant Professor</h3><p class="entry-org">Computing and Digital Technology · Westminster College</p><p class="entry-text">Teaching across computer science, cybersecurity, digital media, web design, and applied internships.</p><div class="tags"><span>Teaching</span><span>Web development</span><span>Cybersecurity</span></div></div>
+    </article>
+<article class="cv-entry" data-index="2">
+      <div class="entry-meta"><p>Jan 2021–Aug 2023</p><span>Experience</span></div>
+      <div><h3>Instructor</h3><p class="entry-org">Computing and Digital Technology · Westminster College</p><p class="entry-text">Full-time teaching in the Department of Computing and Digital Technology.</p><div class="tags"><span>Teaching</span><span>Computing</span><span>Digital media</span></div></div>
+    </article>
+<article class="cv-entry" data-index="3">
+      <div class="entry-meta"><p>2020</p><span>Experience</span></div>
+      <div><h3>Adjunct Instructor</h3><p class="entry-org">Westminster College</p><p class="entry-text">Adjunct teaching appointment.</p><div class="tags"><span>Teaching</span></div></div>
+    </article>
+<article class="cv-entry" data-index="4">
+      <div class="entry-meta"><p>2019–2020</p><span>Experience</span></div>
+      <div><h3>Director of Web and Social Media</h3><p class="entry-org">Department of Marketing · Westminster College</p><p class="entry-text">Web and social media leadership, following an appointment as the college’s web developer.</p><div class="tags"><span>Web development</span><span>Digital marketing</span><span>Leadership</span></div></div>
+    </article>
+<article class="cv-entry" data-index="5">
+      <div class="entry-meta"><p>2018–2019</p><span>Experience</span></div>
+      <div><h3>Web Developer</h3><p class="entry-org">Department of Marketing · Westminster College</p><p class="entry-text">Web development for the college’s marketing department, including work on the creation of a new college website.</p><div class="tags"><span>Web development</span><span>User experience</span><span>Digital communication</span></div></div>
+    </article>
+<article class="cv-entry" data-index="6" hidden>
+      <div class="entry-meta"><p>Spring 2027 admission</p><span>Education</span></div>
+      <div><h3>PhD in Information Systems — Analytics/Decision Support</h3><p class="entry-org">Dakota State University</p><p class="entry-text">Accepted for admission for Spring 2027. Classes begin January 11, 2027.</p><span class="entry-status">Admitted · not yet enrolled</span><div class="tags"><span>Information systems</span><span>Analytics</span></div></div>
+    </article>
+<article class="cv-entry" data-index="7" hidden>
+      <div class="entry-meta"><p>2018</p><span>Education</span></div>
+      <div><h3>Master of Science in Computer Information Systems</h3><p class="entry-org">Bellevue University · Bellevue, Nebraska</p><p class="entry-text">Graduate education in computer information systems.</p><div class="tags"><span>Information systems</span><span>Computing</span></div></div>
+    </article>
+<article class="cv-entry" data-index="8" hidden>
+      <div class="entry-meta"><p>Undergraduate degree</p><span>Education</span></div>
+      <div><h3>Bachelor of Arts in English</h3><p class="entry-org">University of Missouri · Columbia, Missouri</p><p class="entry-text">Undergraduate education in English.</p><div class="tags"><span>Writing</span><span>Communication</span></div></div>
+    </article>
+<article class="cv-entry" data-index="9" hidden>
+      <div class="entry-meta"><p>Proposal accepted · 2026</p><span>Scholarship</span></div>
+      <div><h3>DC Comics fandom</h3><p class="entry-org">Pop Culture Fandoms · Bloomsbury · edited by Paul Booth</p><p class="entry-text">Accepted proposal for an encyclopedia contribution focused on DC Comics fandom. Entry in preparation.</p><span class="entry-status">Accepted proposal · manuscript in preparation</span><div class="tags"><span>DC Comics</span><span>Fandom</span><span>Digital culture</span><span>Writing</span></div></div>
+    </article>
+<article class="cv-entry" data-index="10" hidden>
+      <div class="entry-meta"><p>Oct 15, 2026</p><span>Scholarship</span></div>
+      <div><h3>How Much AI Is Too Much? Finding the Co-Creation Threshold Across Disciplines</h3><p class="entry-org">Chris Cox and Tyler Sorg · MACTE Fall Conference · Columbia, Missouri</p><p class="entry-text">Accepted and forthcoming presentation at the Missouri Association of Colleges for Teacher Education Fall Conference.</p><span class="entry-status">Accepted · forthcoming</span><div class="tags"><span>AI</span><span>Teaching</span><span>Conference</span></div></div>
+    </article>
+<article class="cv-entry" data-index="11" hidden>
+      <div class="entry-meta"><p>Mar 28, 2024</p><span>Scholarship</span></div>
+      <div><h3>Harnessing the Power of Artificial Intelligence for Inclusive Teacher Education</h3><p class="entry-org">Association of Teacher Educators Annual Meeting · Anaheim, California</p><p class="entry-text">Peer-reviewed conference presentation by Chris Cox.</p><div class="tags"><span>AI</span><span>Inclusive education</span><span>Conference</span></div></div>
+    </article>
+<article class="cv-entry" data-index="12" hidden>
+      <div class="entry-meta"><p>Feb 15, 2024</p><span>Scholarship</span></div>
+      <div><h3>AI-Personalized Learning Pathways: Transforming Education</h3><p class="entry-org">Cengage Empowered Educator Online Conference</p><p class="entry-text">Proposal selected by an external review committee; peer-review comments documented.</p><div class="tags"><span>AI</span><span>Teaching</span><span>Conference</span></div></div>
+    </article>
+<article class="cv-entry" data-index="13" hidden>
+      <div class="entry-meta"><p>May 15, 2025</p><span>Scholarship</span></div>
+      <div><h3>AI for Personalized Learning (Without Losing Control)</h3><p class="entry-org">Westminster College Faculty Professional Development Day</p><p class="entry-text">Invited campus workshop; workshop facilitator.</p><div class="tags"><span>AI</span><span>Faculty development</span><span>Workshop</span></div></div>
+    </article>
+<article class="cv-entry" data-index="14" hidden>
+      <div class="entry-meta"><p>2026</p><span>Scholarship</span></div>
+      <div><h3>The Co-Creation Threshold: A Conceptual Framework for Distinguishing AI Support, Co-Creation, and Overreliance in Undergraduate Digital Media</h3><p class="entry-org">Unpublished scholarly work</p><p class="entry-text">Manuscript in development, as listed in the September 2026 CV.</p><span class="entry-status">In development</span><div class="tags"><span>AI</span><span>Digital media</span><span>Teaching</span></div></div>
+    </article>
+<article class="cv-entry" data-index="15" hidden>
+      <div class="entry-meta"><p>2022</p><span>Scholarship</span></div>
+      <div><h3>The Pandemic of Pedagogical and Technological Transition in the Aftermath of COVID-19</h3><p class="entry-org">Unpublished scholarly work</p><p class="entry-text">Unpublished manuscript.</p><span class="entry-status">Unpublished</span><div class="tags"><span>Teaching</span><span>Technology</span><span>Writing</span></div></div>
+    </article>
+<article class="cv-entry" data-index="16" hidden>
+      <div class="entry-meta"><p>2023</p><span>Scholarship</span></div>
+      <div><h3>Life After Loss</h3><p class="entry-org">Chris Cox · Independently published</p><p class="entry-text">Book.</p><div class="tags"><span>Book</span><span>Writing</span></div></div>
+    </article>
+<article class="cv-entry" data-index="17" hidden>
+      <div class="entry-meta"><p>2021</p><span>Scholarship</span></div>
+      <div><h3>Petey the Preemie Panda</h3><p class="entry-org">Tori K. Adams and Chris Cox · Independently published</p><p class="entry-text">Book.</p><div class="tags"><span>Book</span><span>Writing</span></div></div>
+    </article>
+<article class="cv-entry" data-index="18" hidden>
+      <div class="entry-meta"><p>2019</p><span>Scholarship</span></div>
+      <div><h3>From Love to Loss: A NICU Odyssey</h3><p class="entry-org">Chris Cox · Independently published</p><p class="entry-text">Book.</p><div class="tags"><span>Book</span><span>Writing</span></div></div>
+    </article>
+<article class="cv-entry" data-index="19" hidden>
+      <div class="entry-meta"><p>Teaching portfolio</p><span>Teaching</span></div>
+      <div><h3>Computing and cybersecurity courses</h3><p class="entry-org">Westminster College</p><p class="entry-text">Programming Logic and Design; Survey of Computer Science; Software Design and Engineering Concepts; Introduction to Cybersecurity; Cybersecurity for Society; Information Security; Information Security Policy; Digital Forensics; Digital Network Security.</p><div class="tags"><span>Computing</span><span>Cybersecurity</span><span>Programming</span></div></div>
+    </article>
+<article class="cv-entry" data-index="20" hidden>
+      <div class="entry-meta"><p>Teaching portfolio</p><span>Teaching</span></div>
+      <div><h3>Digital media courses</h3><p class="entry-org">Westminster College</p><p class="entry-text">Content Creation for the Digital Age; Introduction to Digital Media; Graphic Design; Media Design and Human Behavior; Web Page Design; Video Production; Social Media and Marketing; digital media internship supervision.</p><div class="tags"><span>Web development</span><span>Digital media</span><span>Design</span></div></div>
+    </article>
+<article class="cv-entry" data-index="21" hidden>
+      <div class="entry-meta"><p>Teaching portfolio</p><span>Teaching</span></div>
+      <div><h3>Additional teaching and supervision</h3><p class="entry-org">Westminster College</p><p class="entry-text">Westminster Seminar. Independent and internship supervision in computing, cybersecurity, athletics media, photography, video, graphic design, sports marketing, and front-office operations.</p><div class="tags"><span>Advising</span><span>Teaching</span><span>Digital media</span></div></div>
+    </article>
+<article class="cv-entry" data-index="22" hidden>
+      <div class="entry-meta"><p>Fall 2026 snapshot</p><span>Teaching</span></div>
+      <div><h3>Academic advising</h3><p class="entry-org">Westminster College</p><p class="entry-text">22 current advisees in Fall 2026; 57 students advised cumulatively during Westminster teaching service.</p><div class="tags"><span>Advising</span><span>Student support</span></div></div>
+    </article>
+<article class="cv-entry" data-index="23" hidden>
+      <div class="entry-meta"><p>Fall 2021–Spring 2026</p><span>Teaching</span></div>
+      <div><h3>Teaching evaluation evidence</h3><p class="entry-org">IDEA student evaluation reports</p><p class="entry-text">Response-weighted mean of 4.68 out of 5 on the item rating the instructor an excellent teacher across available reports from Fall 2021 through Spring 2026.</p><div class="tags"><span>Teaching</span><span>Assessment</span></div></div>
+    </article>
+<article class="cv-entry" data-index="24" hidden>
+      <div class="entry-meta"><p>Fall 2026</p><span>Teaching</span></div>
+      <div><h3>Online C++ course development</h3><p class="entry-org">CSA 104 · Westminster College</p><p class="entry-text">Developed and delivered the department’s first fully online course. Redesigned CSA 104 for online C++ instruction using scaffolded modules, free learning resources, and a semester-long applied project.</p><div class="tags"><span>C++</span><span>Online learning</span><span>Instructional design</span></div></div>
+    </article>
+<article class="cv-entry" data-index="25" hidden>
+      <div class="entry-meta"><p>Course development</p><span>Teaching</span></div>
+      <div><h3>Course creation and redesign</h3><p class="entry-org">Computing and Digital Technology · Westminster College</p><p class="entry-text">Created or substantially redesigned courses in digital media, graphic design, media and human behavior, cybersecurity, and content creation.</p><div class="tags"><span>Curriculum</span><span>Design</span><span>Cybersecurity</span></div></div>
+    </article>
+<article class="cv-entry" data-index="26" hidden>
+      <div class="entry-meta"><p>2026</p><span>Leadership</span></div>
+      <div><h3>Proposed BA in Computer Science</h3><p class="entry-org">Curricular leadership · Westminster College</p><p class="entry-text">Lead author of the proposed 51-hour degree, including curriculum mapping, four-year sequencing, assessment planning, program transition, resource analysis, and external-review materials. Under review in the September 2026 CV.</p><span class="entry-status">Proposal · under review</span><div class="tags"><span>Leadership</span><span>Curriculum</span><span>Computer science</span></div></div>
+    </article>
+<article class="cv-entry" data-index="27" hidden>
+      <div class="entry-meta"><p>2026</p><span>Leadership</span></div>
+      <div><h3>Digital content and sports media certificate proposals</h3><p class="entry-org">Curricular leadership · Westminster College</p><p class="entry-text">Developed proposals for a 12-hour Digital Content Creation Certificate and a 15-hour Sports Media and Content Creation Certificate. Under review in the September 2026 CV.</p><span class="entry-status">Proposals · under review</span><div class="tags"><span>Leadership</span><span>Digital media</span><span>Curriculum</span></div></div>
+    </article>
+<article class="cv-entry" data-index="28" hidden>
+      <div class="entry-meta"><p>Fall 2026</p><span>Leadership</span></div>
+      <div><h3>18 course-level curriculum actions</h3><p class="entry-org">Curricular leadership · Westminster College</p><p class="entry-text">Prepared 12 general-education designation proposals, four prerequisite revisions, and two consolidated Computing and Digital Technology capstone proposals. Under review in the September 2026 CV.</p><span class="entry-status">Proposals · under review</span><div class="tags"><span>Leadership</span><span>Curriculum</span><span>Assessment</span></div></div>
+    </article>
+<article class="cv-entry" data-index="29" hidden>
+      <div class="entry-meta"><p>Program development</p><span>Leadership</span></div>
+      <div><h3>Computer Systems Analysis and Digital Media programs</h3><p class="entry-org">Westminster College</p><p class="entry-text">Co-creator of the Computer Systems Analysis and Digital Media programs.</p><div class="tags"><span>Leadership</span><span>Computing</span><span>Digital media</span></div></div>
+    </article>
+<article class="cv-entry" data-index="30" hidden>
+      <div class="entry-meta"><p>2025–present</p><span>Leadership</span></div>
+      <div><h3>Curriculum Committee</h3><p class="entry-org">Westminster College</p><p class="entry-text">College service.</p><div class="tags"><span>Service</span><span>Curriculum</span></div></div>
+    </article>
+<article class="cv-entry" data-index="31" hidden>
+      <div class="entry-meta"><p>2024–2026</p><span>Leadership</span></div>
+      <div><h3>Teaching and Learning Committee</h3><p class="entry-org">Westminster College</p><p class="entry-text">College service.</p><div class="tags"><span>Service</span><span>Teaching</span></div></div>
+    </article>
+<article class="cv-entry" data-index="32" hidden>
+      <div class="entry-meta"><p>2023–2025</p><span>Leadership</span></div>
+      <div><h3>WATT Committee</h3><p class="entry-org">Westminster College</p><p class="entry-text">College service.</p><div class="tags"><span>Service</span></div></div>
+    </article>
+<article class="cv-entry" data-index="33" hidden>
+      <div class="entry-meta"><p>2023–2024</p><span>Leadership</span></div>
+      <div><h3>Faculty Personnel Committee</h3><p class="entry-org">Westminster College</p><p class="entry-text">College service.</p><div class="tags"><span>Service</span></div></div>
+    </article>
+<article class="cv-entry" data-index="34" hidden>
+      <div class="entry-meta"><p>2025 and 2026</p><span>Leadership</span></div>
+      <div><h3>Undergraduate Scholars Forum judge</h3><p class="entry-org">Westminster College</p><p class="entry-text">Judge for the Undergraduate Scholars Forum.</p><div class="tags"><span>Service</span><span>Scholarship</span></div></div>
+    </article>
+<article class="cv-entry" data-index="35" hidden>
+      <div class="entry-meta"><p>2021, 2025 and 2026</p><span>Leadership</span></div>
+      <div><h3>Hancock Symposium session moderator</h3><p class="entry-org">Westminster College</p><p class="entry-text">Session moderator in 2021 and 2025. Moderated “Asians of Change in American Sports,” presented by Michael Kim, September 15, 2026.</p><div class="tags"><span>Service</span><span>Digital culture</span></div></div>
+    </article>
+<article class="cv-entry" data-index="36" hidden>
+      <div class="entry-meta"><p>2022 and 2023</p><span>Leadership</span></div>
+      <div><h3>Virtual Spotlight Night</h3><p class="entry-org">Westminster College</p><p class="entry-text">College service.</p><div class="tags"><span>Service</span></div></div>
+    </article>
+<article class="cv-entry" data-index="37" hidden>
+      <div class="entry-meta"><p>2022</p><span>Leadership</span></div>
+      <div><h3>Conference paper reviewer</h3><p class="entry-org">CCSC Central Plains Regional Conference</p><p class="entry-text">Service to the profession as a paper reviewer.</p><div class="tags"><span>Service</span><span>Peer review</span><span>Computing</span></div></div>
+    </article>
+<article class="cv-entry" data-index="38" hidden>
+      <div class="entry-meta"><p>2021–2026</p><span>Leadership</span></div>
+      <div><h3>Consortium for Computing Sciences in Colleges</h3><p class="entry-org">Professional organization</p><p class="entry-text">Professional organization affiliation as listed in the 2026 CV.</p><div class="tags"><span>Computing</span><span>Professional service</span></div></div>
+    </article>
+<article class="cv-entry" data-index="39" hidden>
+      <div class="entry-meta"><p>2024</p><span>Awards</span></div>
+      <div><h3>Dean’s Outstanding Junior Faculty Award</h3><p class="entry-org">Westminster College</p><p class="entry-text">Award and honor listed in the 2026 CV.</p><div class="tags"><span>Award</span><span>Teaching</span></div></div>
+    </article>
+<article class="cv-entry" data-index="40" hidden>
+      <div class="entry-meta"><p>2024</p><span>Awards</span></div>
+      <div><h3>Buschman Award</h3><p class="entry-org">Westminster College</p><p class="entry-text">Award and honor listed in the 2026 CV.</p><div class="tags"><span>Award</span></div></div>
+    </article></div><div id="cv-empty" class="empty-state" hidden><h3>No matching entries.</h3><p>Try a broader keyword or reset the filters.</p><button class="button secondary" id="empty-reset">Show all CV entries</button></div><button class="button secondary load-more" id="cv-more" hidden>Show more entries ↓</button>
+    <p class="cv-source-note">Based on my September 2026 CV, with October updates for the accepted DC Comics fandom proposal and Spring 2027 doctoral admission. Proposal and publication statuses are stated individually.</p>
+  </section>
+  <section id="contact" class="contact-section"><div class="wrap"><p class="eyebrow">LET’S MAKE SOMETHING USEFUL</p><div class="contact-top"><h2>Good things start<br>with a <em>conversation.</em></h2><a class="contact-arrow" href="mailto:Chris.Cox@wcmo.edu" aria-label="Email Chris Cox">↗</a></div><a class="button contact-card-cta" href="card/" data-business-card>My business card <span aria-hidden="true">↗</span></a><div class="contact-bottom"><div><a class="email-link" href="mailto:Chris.Cox@wcmo.edu">Chris.Cox@wcmo.edu</a><button class="copy-email" id="copy-email" aria-label="Copy email address">Copy ↗</button></div><p>Web experiences. Computing education.<br>Thoughtful conversations about technology.</p></div></div></section>
+</main>
+<footer class="site-footer wrap"><a class="wordmark" href="#top"><span class="monogram" aria-hidden="true">c<span>c</span>.</span><span>CHRIS COX</span></a><p>© 2026 Chris Cox · Built with HTML, CSS & JavaScript.</p><a href="https://www.wcmo.edu/fac-staff/chris-cox.html" target="_blank" rel="noopener noreferrer">Faculty profile ↗</a><a href="#top">Back to top ↑</a></footer>
+<div id="toast" class="toast" role="status" hidden></div>
+<dialog id="business-card-dialog" class="business-card-dialog" aria-labelledby="business-card-name"><button class="dialog-close" aria-label="Close business card">×</button><article class="business-card" data-contact-card>
+  <div class="business-card-top">
+    <div class="card-identity"><p class="card-kicker">WEB DEVELOPER · EDUCATOR</p><h2 id="business-card-name">Chris Cox<span>.</span></h2><p class="card-role">Assistant Professor<br>& Department Chair</p><p class="card-department">Computing and Digital Technology<br>Westminster College</p></div>
+    <div class="card-photo"><img src="assets/chris-cox-portrait.webp" width="1024" height="1536" alt="Portrait of Chris Cox"></div>
+  </div>
+  <div class="business-card-body">
+    <p class="card-intro">Let’s make something useful.</p>
+    <div class="card-contact-list">
+      <a href="mailto:Chris.Cox@wcmo.edu"><span class="card-contact-icon" aria-hidden="true">@</span><span><small>EMAIL</small>Chris.Cox@wcmo.edu</span><span aria-hidden="true">↗</span></a>
+      <a href="tel:+15735925525"><span class="card-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3 4 5c-2 5 10 17 15 15l2-3-5-3-2 2c-3-1-5-3-6-6l2-2-3-5Z"/></svg></span><span><small>OFFICE PHONE</small>573-592-5525</span><span aria-hidden="true">↗</span></a>
+      <a href="index.html" data-portfolio-url><span class="card-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-6 6-6 12 0 18M12 3c6 6 6 12 0 18"/></svg></span><span><small>PORTFOLIO</small>Explore my work & CV</span><span aria-hidden="true">↗</span></a>
+    </div>
+    <details class="card-office"><summary><span>Westminster College · Fulton, Missouri</span><span aria-hidden="true">+</span></summary><address>Computing and Digital Technology<br>501 Westminster Avenue<br>Fulton, Missouri 65251</address></details>
+    <div class="card-primary-actions"><a class="card-button card-save" href="assets/chris-cox.vcf" download="Chris-Cox.vcf" data-save-contact>Save contact <span aria-hidden="true">↓</span></a><button class="card-button card-share" data-share-card>Share card <span aria-hidden="true">↗</span></button></div>
+    <div class="card-secondary-actions"><button data-copy-card>Copy link <span aria-hidden="true">↗</span></button><button data-toggle-qr aria-expanded="false" aria-controls="business-card-qr">Show QR code <span aria-hidden="true">⊞</span></button></div>
+    <div class="card-qr-panel" id="business-card-qr" hidden><div class="card-qr-code" data-qr-code role="img" aria-label="QR code to open Chris Cox’s digital business card"></div><p>Scan to open my business card.</p><a href="assets/chris-cox-card-qr.svg" download="Chris-Cox-QR.svg" data-download-qr>Download QR code ↓</a></div>
+    <div class="card-copy-fallback" data-copy-fallback hidden><label for="business-card-link">Card link</label><input id="business-card-link" data-card-url type="text" readonly value="http://localhost:8000/card/" aria-label="Business card link to copy"></div>
+    <p class="card-status" data-card-status role="status" aria-live="polite"></p>
+    <p class="card-hint">Save a contact file, or share this card through your phone’s sharing menu.</p>
+    <a class="card-permalink" href="card/" data-card-permalink>Open the standalone card <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
+</dialog>
+<dialog id="adams-dialog" aria-labelledby="adams-dialog-title"><button class="dialog-close" aria-label="Close project notes">×</button><p class="eyebrow">SELECTED WORK / 2026</p><h2 id="adams-dialog-title">Adams K9</h2><p class="dialog-intro">A practical website for a dog-training business in Missouri.</p><h3>The purpose</h3><p>Help prospective clients understand the training options and make it easy to take the next step.</p><h3>The work</h3><p>A one-page experience with service information, a training-fit selector, a cost calculator, and call or text inquiry paths. Prepared for delivery through Wix and launched for Adams K9.</p><h3>What it demonstrates</h3><div class="tags"><span>Responsive page design</span><span>Interaction design</span><span>Content organization</span><span>Client delivery</span></div><a class="button primary" href="https://www.adamsk9llc.com/" target="_blank" rel="noopener noreferrer">Visit the live website ↗</a></dialog>
+<dialog id="westminster-dialog" aria-labelledby="westminster-dialog-title"><button class="dialog-close" aria-label="Close experience details">×</button><p class="eyebrow">PROFESSIONAL EXPERIENCE / 2018–2020</p><h2 id="westminster-dialog-title">Web development.<br>Digital leadership.</h2><p class="dialog-intro">Westminster College · Department of Marketing</p><h3>Web Developer · 2018–2019</h3><p>Worked on the creation of a new college website before moving into a broader web and social media leadership role.</p><h3>Director of Web and Social Media · 2019–2020</h3><p>Led web and social media work for the college’s marketing department before transitioning to full-time teaching.</p><p class="small">These dates and roles are from the 2026 CV. The college’s current website may include later work by other contributors.</p><a class="button primary" href="#cv" data-cv-query="Web" data-close-dialog>See related CV entries ↗</a></dialog>
+<dialog id="build-dialog" aria-labelledby="build-dialog-title"><button class="dialog-close" aria-label="Close implementation details">×</button><p class="eyebrow">THIS WEBSITE / UNDER THE SURFACE</p><h2 id="build-dialog-title">The portfolio is<br>part of the portfolio.</h2><p class="dialog-intro">Small working examples of front-end development and interaction design.</p><div class="build-facts"><div><h3>Design system</h3><p>CSS custom properties drive the live workbench. Color, corner radius, and layout controls update the preview immediately.</p></div><div><h3>Visible logic</h3><p>The algorithm demo calculates real insertion-sort states, comparisons, and swaps. Play, pause, stepping, and shuffle work on the same state sequence.</p></div><div><h3>Structured content</h3><p>One CV dataset powers category filtering, keyword search, and the printable CV.</p></div><div><h3>People first</h3><p>Native controls, keyboard focus styles, labeled inputs, reduced-motion support, and a remembered color theme support different ways of using the site.</p></div></div><a class="text-link" href="assets/portfolio-source.zip" download>Download the portfolio source ↗</a></dialog>
+<noscript><div class="noscript-note">This page’s interactive demonstrations need JavaScript. <a href="cv.html">Read the complete CV here.</a></div></noscript>
+</body>
+</html>
