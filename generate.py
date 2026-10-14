@@ -1,4 +1,5 @@
 """Build static CV views and a downloadable source bundle from one content dataset."""
+# Keep this source ASCII-only: Unicode symbols use escapes for safe copying.
 from pathlib import Path
 import html, json, zipfile, subprocess, os
 from urllib.parse import urljoin, urlsplit, urlencode, quote
@@ -80,7 +81,7 @@ FREELANCE_SECTION = f'''
         <p class="eyebrow">INDEPENDENT WEB SERVICES</p>
         <h2 id="freelance-title">Work with <em>me.</em></h2>
         <p class="freelance-summary">I build websites for small businesses, redesign existing sites, and develop interactive features that help visitors understand your services and take the next step.</p>
-        <a class="button primary" href="{esc(inquiry_url)}" data-freelance-inquiry>Tell me about your project <span aria-hidden="true">â</span></a>
+        <a class="button primary" href="{esc(inquiry_url)}" data-freelance-inquiry>Tell me about your project <span aria-hidden="true">\u2197</span></a>
         <p class="freelance-independence">Select projects, with a clear scope. My freelance work is independent of my role at Westminster College.</p>
       </div>
       <div>
@@ -104,12 +105,12 @@ FREELANCE_SECTION = f'''
 '''
 
 CONTACT_SECTION = f'''<section id="contact" class="contact-section" aria-labelledby="contact-title"><div class="wrap">
-    <p class="eyebrow">LETâS MAKE SOMETHING USEFUL</p>
-    <div class="contact-top"><h2 id="contact-title">Good things start<br>with a <em>conversation.</em></h2><a class="contact-arrow" href="{esc(inquiry_url)}" aria-label="Email Chris about a freelance website project" title="Freelance website inquiry">â</a></div>
-    <div class="freelance-contact-actions"><a class="button freelance-inquiry-button" href="{esc(inquiry_url)}" data-freelance-inquiry>Discuss a website project <span aria-hidden="true">â</span></a><a class="button contact-card-cta" href="card/" data-business-card>My business card <span aria-hidden="true">â</span></a></div>
+    <p class="eyebrow">LET\u2019S MAKE SOMETHING USEFUL</p>
+    <div class="contact-top"><h2 id="contact-title">Good things start<br>with a <em>conversation.</em></h2><a class="contact-arrow" href="{esc(inquiry_url)}" aria-label="Email Chris about a freelance website project" title="Freelance website inquiry">\u2197</a></div>
+    <div class="freelance-contact-actions"><a class="button freelance-inquiry-button" href="{esc(inquiry_url)}" data-freelance-inquiry>Discuss a website project <span aria-hidden="true">\u2197</span></a><a class="button contact-card-cta" href="card/" data-business-card>My business card <span aria-hidden="true">\u2197</span></a></div>
     <div class="contact-bottom contact-routes">
       <div class="contact-route"><p class="contact-route-label">Freelance website projects</p><a class="email-link" href="mailto:{FREELANCE_EMAIL}">{FREELANCE_EMAIL}</a><p class="contact-route-note">Independent website design and development.<br>Project inquiries and quotes.</p></div>
-      <div class="contact-route"><p class="contact-route-label">Westminster &amp; academic inquiries</p><div class="contact-route-links"><a class="email-link" href="mailto:Chris.Cox@wcmo.edu">Chris.Cox@wcmo.edu</a><button class="copy-email" id="copy-email" aria-label="Copy Westminster College email address">Copy â</button></div><p class="contact-route-note">College work, teaching, and academic collaboration.</p></div>
+      <div class="contact-route"><p class="contact-route-label">Westminster &amp; academic inquiries</p><div class="contact-route-links"><a class="email-link" href="mailto:Chris.Cox@wcmo.edu">Chris.Cox@wcmo.edu</a><button class="copy-email" id="copy-email" aria-label="Copy Westminster College email address">Copy \u2197</button></div><p class="contact-route-note">College work, teaching, and academic collaboration.</p></div>
     </div>
   </div></section>'''
 
@@ -121,14 +122,30 @@ def replace_once(text, old, new, label):
         raise ValueError(f'Could not locate the expected {label}; review the source template before rebuilding.')
     return text.replace(old, new, 1)
 
+def fix_adams_photo(template):
+    # The stored WebP pixels are sideways. Rotate the displayed image clockwise
+    # and swap its layout dimensions so it still covers the same right-hand area.
+    old = '<img src="assets/adams-k9.webp" width="900" height="1200"'
+    new = '<img class="adams-photo-upright" src="assets/adams-k9.webp" width="900" height="675"'
+    template = replace_once(template, old, new, 'Adams K9 photo')
+    photo_css = '''
+.adams-art{--adams-ratio:1.2;aspect-ratio:var(--adams-ratio)}
+.adams-art .adams-photo-upright{left:66%;top:50%;right:auto;width:calc(100% / var(--adams-ratio));height:calc(68% * var(--adams-ratio));max-width:none;object-position:50% 50%;transform:translate(-50%,-50%) rotate(90deg)}
+.adams-art:hover .adams-photo-upright{transform:translate(-50%,-50%) rotate(90deg) scale(1.035)}
+@media(max-width:860px){.adams-art{--adams-ratio:.85}}
+@media(max-width:700px){.adams-art{--adams-ratio:1.1}}
+'''
+    return replace_once(template, '</head>', '<style id="adams-photo-styles">' + photo_css + '</style>\n</head>', 'Adams K9 photo styles')
+
 def add_freelance_homepage(template):
+    template = fix_adams_photo(template)
     work_link = '<a href="#work">Selected work</a>'
     if '<a href="#work-with-me">Work with me</a>' not in template:
         if template.count(work_link) != 2:
             raise ValueError('Expected desktop and mobile Selected work navigation links.')
         template = template.replace(work_link, work_link + '<a href="#work-with-me">Work with me</a>')
     tags = '<div class="tags"><span>Web design</span><span>Interactive tools</span><span>Wix delivery</span></div>'
-    availability = '<p class="freelance-availability"><span class="status-dot" aria-hidden="true"></span><span>Available for select website design and development projects. <a href="#work-with-me">Work with me <span aria-hidden="true">â</span></a></span></p>'
+    availability = '<p class="freelance-availability"><span class="status-dot" aria-hidden="true"></span><span>Available for select website design and development projects. <a href="#work-with-me">Work with me <span aria-hidden="true">\u2192</span></a></span></p>'
     template = replace_once(template, tags, tags + availability, 'Adams K9 availability placement')
     template = replace_once(template, '  <section id="playground"', FREELANCE_SECTION + '  <section id="playground"', 'services section placement')
     start = template.index('<section id="contact"')
@@ -140,7 +157,7 @@ def add_freelance_card(card):
     old = '<small>EMAIL</small>Chris.Cox@wcmo.edu'
     card = replace_once(card, old, '<small>WESTMINSTER &amp; ACADEMIC</small>Chris.Cox@wcmo.edu', 'college email label')
     anchor = '    <div class="card-contact-list">'
-    row = f'\n      <a href="{esc(inquiry_url)}" data-freelance-inquiry><span class="card-contact-icon" aria-hidden="true">@</span><span class="card-email-value"><small>FREELANCE INQUIRIES</small>{FREELANCE_EMAIL}</span><span aria-hidden="true">â</span></a>'
+    row = f'\n      <a href="{esc(inquiry_url)}" data-freelance-inquiry><span class="card-contact-icon" aria-hidden="true">@</span><span class="card-email-value"><small>FREELANCE INQUIRIES</small>{FREELANCE_EMAIL}</span><span aria-hidden="true">\u2197</span></a>'
     return replace_once(card, anchor, anchor + row, 'freelance business card email')
 
 # Keep saved contacts consistent with the two clearly labeled email routes.
@@ -193,12 +210,12 @@ for category in ['Experience','Education','Scholarship','Teaching','Leadership',
     items='\n'.join(entry_markup(e,i,True) for i,e in enumerate(DATA['entries']) if e['category']==category)
     sections.append(f'<section><h2>{esc(heading)}</h2>{items}</section>')
 
-cv = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Christopher Cox â Curriculum Vitae. Computing and Digital Technology, Westminster College."><title>Christopher Cox â Curriculum Vitae</title><link rel="icon" href="assets/favicon.svg"><style>
+cv = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Christopher Cox \u2014 Curriculum Vitae. Computing and Digital Technology, Westminster College."><title>Christopher Cox \u2014 Curriculum Vitae</title><link rel="icon" href="assets/favicon.svg"><style>
 *{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;color:#222;background:#f3f2ed;line-height:1.55;margin:0;font-size:13px}a{color:#44319c;text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid #5b44d5;outline-offset:4px}.paper{max-width:930px;margin:35px auto;padding:60px 65px;background:white;box-shadow:0 5px 30px #0001}.print-toolbar{max-width:930px;margin:30px auto 0;display:flex;justify-content:space-between;gap:20px;padding:0 15px;font-size:13px}.print-toolbar button{font:inherit;background:#5b44d5;border:0;border-radius:5px;padding:10px 18px;color:white;cursor:pointer}h1{font-size:37px;line-height:1.1;letter-spacing:-1.5px;margin:0 0 12px}header>p{margin:3px 0}.contact{font-size:11px;color:#555}.update{font-size:10px;color:#666;margin-top:13px!important}h2{font-size:20px;letter-spacing:-.5px;border-bottom:2px solid #333;padding-bottom:7px;margin:35px 0 5px}h3{font-size:14px;line-height:1.4;margin:0}.intro h2{margin-top:30px}.intro p{font-size:12px}.cv-entry{display:grid;grid-template-columns:125px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid #ddd;break-inside:avoid}.entry-meta p{font-size:10px;margin:0;color:#555}.entry-meta span,.tags{display:none}.entry-org{font-size:11px;color:#55458d;margin:4px 0 7px}.entry-text{font-size:11px;margin:0}.entry-status{display:inline-block;font-size:9px;margin-top:7px;padding:2px 6px;background:#efebfa;color:#44319c}.footer-note{font-size:10px;color:#666;margin-top:35px;border-top:1px solid #ccc;padding-top:15px}
 @media(max-width:650px){.paper{margin:20px 12px;padding:30px 24px}.cv-entry{grid-template-columns:1fr;gap:6px}.print-toolbar{align-items:center}.print-toolbar button{padding:9px 11px;font-size:11px}h1{font-size:32px}}
 @page{size:letter;margin:.6in}
 @media print{body{background:#fff;font-size:11px}.print-toolbar{display:none}.paper{max-width:none;padding:0;margin:0;box-shadow:none}h1{font-size:29px}h2{break-after:avoid;font-size:16px;margin-top:24px}.cv-entry{grid-template-columns:115px 1fr;padding:10px 0;gap:16px}h3{font-size:12px}.entry-text{font-size:10px}.entry-org{font-size:10px;color:#333}.entry-status{background:none;border:1px solid #aaa;color:#222;font-size:8px}a{color:inherit;text-decoration:none}.footer-note{font-size:8px}}
-</style></head><body><div class="print-toolbar"><a href="index.html#cv">â Back to the interactive portfolio</a><button id="print">Print / save as PDF</button></div><main class="paper"><header><h1>Christopher Cox</h1><p><strong>Assistant Professor and Department Chair</strong></p><p>Computing and Digital Technology Â· Westminster College</p><p class="contact">501 Westminster Avenue, Fulton, Missouri 65251 Â· 573-592-5525<br><a href="mailto:Chris.Cox@wcmo.edu">Chris.Cox@wcmo.edu</a></p><p class="update">Curriculum vitae Â· Updated October 13, 2026</p></header><section class="intro"><h2>Academic interests</h2><p>INTERESTS</p></section>SECTIONS<p class="footer-note">Based on the September 2026 CV, with October updates for the accepted DC Comics fandom proposal and Spring 2027 doctoral admission. Proposal statuses reflect the source CV unless a later update is stated. Course titles reflect the catalog or commonly used title during the term taught.</p></main><script>document.getElementById('print').addEventListener('click',function(){window.print()});</script></body></html>'''
+</style></head><body><div class="print-toolbar"><a href="index.html#cv">\u2190 Back to the interactive portfolio</a><button id="print">Print / save as PDF</button></div><main class="paper"><header><h1>Christopher Cox</h1><p><strong>Assistant Professor and Department Chair</strong></p><p>Computing and Digital Technology \u00b7 Westminster College</p><p class="contact">501 Westminster Avenue, Fulton, Missouri 65251 \u00b7 573-592-5525<br><a href="mailto:Chris.Cox@wcmo.edu">Chris.Cox@wcmo.edu</a></p><p class="update">Curriculum vitae \u00b7 Updated October 13, 2026</p></header><section class="intro"><h2>Academic interests</h2><p>INTERESTS</p></section>SECTIONS<p class="footer-note">Based on the September 2026 CV, with October updates for the accepted DC Comics fandom proposal and Spring 2027 doctoral admission. Proposal statuses reflect the source CV unless a later update is stated. Course titles reflect the catalog or commonly used title during the term taught.</p></main><script>document.getElementById('print').addEventListener('click',function(){window.print()});</script></body></html>'''
 (DIST / 'cv.html').write_text(cv.replace('INTERESTS',esc(DATA['interests'])).replace('SECTIONS','\n'.join(sections)),encoding='utf-8')
 
 # Include the actual source, excluding the archive itself and hosting credentials.
