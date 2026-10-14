@@ -1,0 +1,68 @@
+# In GitHub, create .github/workflows/deploy-pages.yml and paste this entire file.
+name: Deploy portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Restore uploaded folders for the build
+        run: |
+          python3 - <<'PY'
+          from collections import Counter
+          from pathlib import Path
+          from zipfile import ZipFile
+          import shutil
+          root = Path.cwd()
+          build = root / '.portfolio-build'
+          with ZipFile(root / 'portfolio-source.zip') as archive:
+              archive.extractall(build)
+          files = [p for p in build.rglob('*') if p.is_file()]
+          counts = Counter(p.name for p in files)
+          for target in files:
+              uploaded = root / target.name
+              if counts[target.name] == 1 and uploaded.is_file():
+                  shutil.copyfile(uploaded, target)
+          PY
+      - name: Read the GitHub Pages address
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build and check the portfolio
+        working-directory: .portfolio-build
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          python3 generate.py
+          node --test tests/*.test.cjs
+          python3 tests/deployment_test.py
+          python3 validate.py
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .portfolio-build/dist
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
