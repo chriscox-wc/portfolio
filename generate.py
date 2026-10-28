@@ -170,18 +170,42 @@ new_note = "      `NOTE:${e('Web developer and educator.\\n'+(contact.freelanceE
 core = replace_once(core, old_note, new_note, 'vCard inquiry labels')
 core_path.write_text(core, encoding='utf-8')
 
+def add_daily_gathering(template):
+    """Load additive project partials without altering the existing work cards."""
+    feature = (ROOT / 'templates/daily-gathering-feature.html').read_text(encoding='utf-8')
+    case_study = (ROOT / 'templates/daily-gathering-case-study.html').read_text(encoding='utf-8')
+    anchor = '    <div class="work-grid">'
+    template = replace_once(template, anchor, feature + '\n' + anchor, 'featured independent project placement')
+    anchor = '<dialog id="adams-dialog"'
+    template = replace_once(template, anchor, case_study + '\n' + anchor, 'independent project case study')
+    anchor = '<button data-category="Education" aria-pressed="false">Education</button>'
+    project_filter = '<button data-category="Digital projects" aria-pressed="false" aria-label="Selected Digital Projects and Technical Innovation">Digital projects</button>'
+    template = replace_once(template, anchor, project_filter + anchor, 'digital projects CV filter')
+    old_note = 'with October updates for the accepted DC Comics fandom proposal and Spring 2027 doctoral admission.'
+    new_note = 'with October updates for the accepted DC Comics fandom proposal, Spring 2027 doctoral admission, and The Daily Gathering independent digital project.'
+    template = replace_once(template, old_note, new_note, 'CV update note')
+    template = replace_once(template, '</body>', '<script src="daily-gathering.js" defer></script>\n</body>', 'case study scroll reset')
+    return replace_once(template, '</head>', '<link rel="stylesheet" href="daily-gathering.css">\n</head>', 'independent project styles')
+
 def entry_markup(entry, index, print_view=False):
     hidden = '' if print_view or entry['category'] == 'Experience' else ' hidden'
     tags = ''.join(f'<span>{esc(tag)}</span>' for tag in entry['tags'])
     status = f'<span class="entry-status">{esc(entry["status"])}</span>' if entry.get('status') else ''
+    project_link = ''
+    if entry.get('url'):
+        project_url = urlsplit(entry['url'])
+        if project_url.scheme not in ('https', 'http') or not project_url.hostname:
+            raise ValueError('CV project links must be absolute HTTP(S) URLs.')
+        project_link = f'<p class="entry-project-link"><a href="{esc(entry["url"])}" target="_blank" rel="noopener noreferrer">{esc(entry["url"])}<span class="dg-sr-only"> (opens in a new tab)</span></a></p>' if not print_view else f'<p class="entry-project-link"><a href="{esc(entry["url"])}">{esc(entry["url"])}</a></p>'
     return f'''<article class="cv-entry" data-index="{index}"{hidden}>
       <div class="entry-meta"><p>{esc(entry['date'])}</p><span>{esc(entry['category'])}</span></div>
-      <div><h3>{esc(entry['title'])}</h3><p class="entry-org">{esc(entry['org'])}</p><p class="entry-text">{esc(entry['text'])}</p>{status}<div class="tags">{tags}</div></div>
+      <div><h3>{esc(entry['title'])}</h3><p class="entry-org">{esc(entry['org'])}</p><p class="entry-text">{esc(entry['text'])}</p>{project_link}{status}<div class="tags">{tags}</div></div>
     </article>'''
 
 entries = '\n'.join(entry_markup(entry, i) for i, entry in enumerate(DATA['entries']))
 courses = '\n'.join(f'<details class="course-item" data-area="{esc(c["area"])}"><summary>{esc(c["title"])}</summary><p>{esc(c["focus"])}<span>{esc(c["area"])}</span></p></details>' for c in DATA['courses'])
 template = add_freelance_homepage((ROOT / 'templates/index.html').read_text(encoding='utf-8'))
+template = add_daily_gathering(template)
 card_url = urljoin(DATA['contact']['siteUrl'], 'card/')
 portrait_url = urljoin(DATA['contact']['siteUrl'], 'assets/chris-cox-portrait.webp')
 card = add_freelance_card((ROOT / 'templates/business-card.html').read_text(encoding='utf-8')).replace('{{CARD_URL}}',esc(card_url))
@@ -205,17 +229,17 @@ vcard_result = subprocess.run(
 (DIST / 'assets/chris-cox.vcf').write_bytes(vcard_result.stdout)
 
 sections=[]
-for category in ['Experience','Education','Scholarship','Teaching','Leadership','Awards']:
-    heading = {'Leadership':'Academic and institutional service','Experience':'Professional experience','Scholarship':'Scholarly and professional activity','Teaching':'Teaching and advising','Awards':'Awards and honors'}.get(category,category)
+for category in ['Experience','Digital projects','Education','Scholarship','Teaching','Leadership','Awards']:
+    heading = {'Digital projects':'Selected Digital Projects and Technical Innovation','Leadership':'Academic and institutional service','Experience':'Professional experience','Scholarship':'Scholarly and professional activity','Teaching':'Teaching and advising','Awards':'Awards and honors'}.get(category,category)
     items='\n'.join(entry_markup(e,i,True) for i,e in enumerate(DATA['entries']) if e['category']==category)
     sections.append(f'<section><h2>{esc(heading)}</h2>{items}</section>')
 
 cv = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Christopher Cox \u2014 Curriculum Vitae. Computing and Digital Technology, Westminster College."><title>Christopher Cox \u2014 Curriculum Vitae</title><link rel="icon" href="assets/favicon.svg"><style>
-*{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;color:#222;background:#f3f2ed;line-height:1.55;margin:0;font-size:13px}a{color:#44319c;text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid #5b44d5;outline-offset:4px}.paper{max-width:930px;margin:35px auto;padding:60px 65px;background:white;box-shadow:0 5px 30px #0001}.print-toolbar{max-width:930px;margin:30px auto 0;display:flex;justify-content:space-between;gap:20px;padding:0 15px;font-size:13px}.print-toolbar button{font:inherit;background:#5b44d5;border:0;border-radius:5px;padding:10px 18px;color:white;cursor:pointer}h1{font-size:37px;line-height:1.1;letter-spacing:-1.5px;margin:0 0 12px}header>p{margin:3px 0}.contact{font-size:11px;color:#555}.update{font-size:10px;color:#666;margin-top:13px!important}h2{font-size:20px;letter-spacing:-.5px;border-bottom:2px solid #333;padding-bottom:7px;margin:35px 0 5px}h3{font-size:14px;line-height:1.4;margin:0}.intro h2{margin-top:30px}.intro p{font-size:12px}.cv-entry{display:grid;grid-template-columns:125px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid #ddd;break-inside:avoid}.entry-meta p{font-size:10px;margin:0;color:#555}.entry-meta span,.tags{display:none}.entry-org{font-size:11px;color:#55458d;margin:4px 0 7px}.entry-text{font-size:11px;margin:0}.entry-status{display:inline-block;font-size:9px;margin-top:7px;padding:2px 6px;background:#efebfa;color:#44319c}.footer-note{font-size:10px;color:#666;margin-top:35px;border-top:1px solid #ccc;padding-top:15px}
+*{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;color:#222;background:#f3f2ed;line-height:1.55;margin:0;font-size:13px}a{color:#44319c;text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid #5b44d5;outline-offset:4px}.paper{max-width:930px;margin:35px auto;padding:60px 65px;background:white;box-shadow:0 5px 30px #0001}.print-toolbar{max-width:930px;margin:30px auto 0;display:flex;justify-content:space-between;gap:20px;padding:0 15px;font-size:13px}.print-toolbar button{font:inherit;background:#5b44d5;border:0;border-radius:5px;padding:10px 18px;color:white;cursor:pointer}h1{font-size:37px;line-height:1.1;letter-spacing:-1.5px;margin:0 0 12px}header>p{margin:3px 0}.contact{font-size:11px;color:#555}.update{font-size:10px;color:#666;margin-top:13px!important}h2{font-size:20px;letter-spacing:-.5px;border-bottom:2px solid #333;padding-bottom:7px;margin:35px 0 5px}h3{font-size:14px;line-height:1.4;margin:0}.intro h2{margin-top:30px}.intro p{font-size:12px}.cv-entry{display:grid;grid-template-columns:125px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid #ddd;break-inside:avoid}.entry-meta p{font-size:10px;margin:0;color:#555}.entry-meta span,.tags{display:none}.entry-org{font-size:11px;color:#55458d;margin:4px 0 7px}.entry-text{font-size:11px;margin:0}.entry-project-link{font-size:11px;margin:7px 0 0;overflow-wrap:anywhere}.entry-status{display:inline-block;font-size:9px;margin-top:7px;padding:2px 6px;background:#efebfa;color:#44319c}.footer-note{font-size:10px;color:#666;margin-top:35px;border-top:1px solid #ccc;padding-top:15px}
 @media(max-width:650px){.paper{margin:20px 12px;padding:30px 24px}.cv-entry{grid-template-columns:1fr;gap:6px}.print-toolbar{align-items:center}.print-toolbar button{padding:9px 11px;font-size:11px}h1{font-size:32px}}
 @page{size:letter;margin:.6in}
 @media print{body{background:#fff;font-size:11px}.print-toolbar{display:none}.paper{max-width:none;padding:0;margin:0;box-shadow:none}h1{font-size:29px}h2{break-after:avoid;font-size:16px;margin-top:24px}.cv-entry{grid-template-columns:115px 1fr;padding:10px 0;gap:16px}h3{font-size:12px}.entry-text{font-size:10px}.entry-org{font-size:10px;color:#333}.entry-status{background:none;border:1px solid #aaa;color:#222;font-size:8px}a{color:inherit;text-decoration:none}.footer-note{font-size:8px}}
-</style></head><body><div class="print-toolbar"><a href="index.html#cv">\u2190 Back to the interactive portfolio</a><button id="print">Print / save as PDF</button></div><main class="paper"><header><h1>Christopher Cox</h1><p><strong>Assistant Professor and Department Chair</strong></p><p>Computing and Digital Technology \u00b7 Westminster College</p><p class="contact">501 Westminster Avenue, Fulton, Missouri 65251 \u00b7 573-592-5525<br><a href="mailto:Chris.Cox@wcmo.edu">Chris.Cox@wcmo.edu</a></p><p class="update">Curriculum vitae \u00b7 Updated October 13, 2026</p></header><section class="intro"><h2>Academic interests</h2><p>INTERESTS</p></section>SECTIONS<p class="footer-note">Based on the September 2026 CV, with October updates for the accepted DC Comics fandom proposal and Spring 2027 doctoral admission. Proposal statuses reflect the source CV unless a later update is stated. Course titles reflect the catalog or commonly used title during the term taught.</p></main><script>document.getElementById('print').addEventListener('click',function(){window.print()});</script></body></html>'''
+</style></head><body><div class="print-toolbar"><a href="index.html#cv">\u2190 Back to the interactive portfolio</a><button id="print">Print / save as PDF</button></div><main class="paper"><header><h1>Christopher Cox</h1><p><strong>Assistant Professor and Department Chair</strong></p><p>Computing and Digital Technology \u00b7 Westminster College</p><p class="contact">501 Westminster Avenue, Fulton, Missouri 65251 \u00b7 573-592-5525<br><a href="mailto:Chris.Cox@wcmo.edu">Chris.Cox@wcmo.edu</a></p><p class="update">Curriculum vitae \u00b7 Updated October 28, 2026</p></header><section class="intro"><h2>Academic interests</h2><p>INTERESTS</p></section>SECTIONS<p class="footer-note">Based on the September 2026 CV, with October updates for the accepted DC Comics fandom proposal, Spring 2027 doctoral admission, and The Daily Gathering independent digital project. Proposal statuses reflect the source CV unless a later update is stated. Course titles reflect the catalog or commonly used title during the term taught.</p></main><script>document.getElementById('print').addEventListener('click',function(){window.print()});</script></body></html>'''
 (DIST / 'cv.html').write_text(cv.replace('INTERESTS',esc(DATA['interests'])).replace('SECTIONS','\n'.join(sections)),encoding='utf-8')
 
 # Include the actual source, excluding the archive itself and hosting credentials.
