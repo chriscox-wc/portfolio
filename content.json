@@ -7,9 +7,9 @@
   "entries": [
     {
       "category": "Experience",
-      "date": "Aug 2024–present",
+      "date": "Aug 2024\u2013present",
       "title": "Department Chair",
-      "org": "Computing and Digital Technology · Westminster College",
+      "org": "Computing and Digital Technology \u00b7 Westminster College",
       "text": "Department leadership across computing and digital technology. Curriculum development, program planning, and academic service.",
       "tags": [
         "Leadership",
@@ -19,9 +19,9 @@
     },
     {
       "category": "Experience",
-      "date": "Aug 2023–present",
+      "date": "Aug 2023\u2013present",
       "title": "Assistant Professor",
-      "org": "Computing and Digital Technology · Westminster College",
+      "org": "Computing and Digital Technology \u00b7 Westminster College",
       "text": "Teaching across computer science, cybersecurity, digital media, web design, and applied internships.",
       "tags": [
         "Teaching",
@@ -31,9 +31,9 @@
     },
     {
       "category": "Experience",
-      "date": "Jan 2021–Aug 2023",
+      "date": "Jan 2021\u2013Aug 2023",
       "title": "Instructor",
-      "org": "Computing and Digital Technology · Westminster College",
+      "org": "Computing and Digital Technology \u00b7 Westminster College",
       "text": "Full-time teaching in the Department of Computing and Digital Technology.",
       "tags": [
         "Teaching",
@@ -53,10 +53,10 @@
     },
     {
       "category": "Experience",
-      "date": "2019–2020",
+      "date": "2019\u20132020",
       "title": "Director of Web and Social Media",
-      "org": "Department of Marketing · Westminster College",
-      "text": "Web and social media leadership, following an appointment as the college’s web developer.",
+      "org": "Department of Marketing \u00b7 Westminster College",
+      "text": "Web and social media leadership, following an appointment as the college\u2019s web developer.",
       "tags": [
         "Web development",
         "Digital marketing",
@@ -65,10 +65,10 @@
     },
     {
       "category": "Experience",
-      "date": "2018–2019",
+      "date": "2018\u20132019",
       "title": "Web Developer",
-      "org": "Department of Marketing · Westminster College",
-      "text": "Web development for the college’s marketing department, including work on the creation of a new college website.",
+      "org": "Department of Marketing \u00b7 Westminster College",
+      "text": "Web development for the college\u2019s marketing department, including work on the creation of a new college website.",
       "tags": [
         "Web development",
         "User experience",
@@ -78,10 +78,10 @@
     {
       "category": "Education",
       "date": "Spring 2027 admission",
-      "title": "PhD in Information Systems — Analytics/Decision Support",
+      "title": "PhD in Information Systems \u2014 Analytics/Decision Support",
       "org": "Dakota State University",
       "text": "Accepted for admission for Spring 2027. Classes begin January 11, 2027.",
-      "status": "Admitted · not yet enrolled",
+      "status": "Admitted \u00b7 not yet enrolled",
       "tags": [
         "Information systems",
         "Analytics"
@@ -91,7 +91,7 @@
       "category": "Education",
       "date": "2018",
       "title": "Master of Science in Computer Information Systems",
-      "org": "Bellevue University · Bellevue, Nebraska",
+      "org": "Bellevue University \u00b7 Bellevue, Nebraska",
       "text": "Graduate education in computer information systems.",
       "tags": [
         "Information systems",
@@ -102,7 +102,7 @@
       "category": "Education",
       "date": "Undergraduate degree",
       "title": "Bachelor of Arts in English",
-      "org": "University of Missouri · Columbia, Missouri",
+      "org": "University of Missouri \u00b7 Columbia, Missouri",
       "text": "Undergraduate education in English.",
       "tags": [
         "Writing",
@@ -111,11 +111,11 @@
     },
     {
       "category": "Scholarship",
-      "date": "Proposal accepted · 2026",
+      "date": "Proposal accepted \u00b7 2026",
       "title": "DC Comics fandom",
-      "org": "Pop Culture Fandoms · Bloomsbury · edited by Paul Booth",
+      "org": "Pop Culture Fandoms \u00b7 Bloomsbury \u00b7 edited by Paul Booth",
       "text": "Accepted proposal for an encyclopedia contribution focused on DC Comics fandom. Entry in preparation.",
-      "status": "Accepted proposal · manuscript in preparation",
+      "status": "Accepted proposal \u00b7 manuscript in preparation",
       "tags": [
         "DC Comics",
         "Fandom",
@@ -127,9 +127,9 @@
       "category": "Scholarship",
       "date": "Oct 15, 2026",
       "title": "How Much AI Is Too Much? Finding the Co-Creation Threshold Across Disciplines",
-      "org": "Chris Cox and Tyler Sorg · MACTE Fall Conference · Columbia, Missouri",
+      "org": "Chris Cox and Tyler Sorg \u00b7 MACTE Fall Conference \u00b7 Columbia, Missouri",
       "text": "Accepted and forthcoming presentation at the Missouri Association of Colleges for Teacher Education Fall Conference.",
-      "status": "Accepted · forthcoming",
+      "status": "Accepted \u00b7 forthcoming",
       "tags": [
         "AI",
         "Teaching",
@@ -140,7 +140,7 @@
       "category": "Scholarship",
       "date": "Mar 28, 2024",
       "title": "Harnessing the Power of Artificial Intelligence for Inclusive Teacher Education",
-      "org": "Association of Teacher Educators Annual Meeting · Anaheim, California",
+      "org": "Association of Teacher Educators Annual Meeting \u00b7 Anaheim, California",
       "text": "Peer-reviewed conference presentation by Chris Cox.",
       "tags": [
         "AI",
@@ -202,7 +202,7 @@
       "category": "Scholarship",
       "date": "2023",
       "title": "Life After Loss",
-      "org": "Chris Cox · Independently published",
+      "org": "Chris Cox \u00b7 Independently published",
       "text": "Book.",
       "tags": [
         "Book",
@@ -213,7 +213,7 @@
       "category": "Scholarship",
       "date": "2021",
       "title": "Petey the Preemie Panda",
-      "org": "Tori K. Adams and Chris Cox · Independently published",
+      "org": "Tori K. Adams and Chris Cox \u00b7 Independently published",
       "text": "Book.",
       "tags": [
         "Book",
@@ -224,7 +224,7 @@
       "category": "Scholarship",
       "date": "2019",
       "title": "From Love to Loss: A NICU Odyssey",
-      "org": "Chris Cox · Independently published",
+      "org": "Chris Cox \u00b7 Independently published",
       "text": "Book.",
       "tags": [
         "Book",
@@ -280,7 +280,7 @@
     },
     {
       "category": "Teaching",
-      "date": "Fall 2021–Spring 2026",
+      "date": "Fall 2021\u2013Spring 2026",
       "title": "Teaching evaluation evidence",
       "org": "IDEA student evaluation reports",
       "text": "Response-weighted mean of 4.68 out of 5 on the item rating the instructor an excellent teacher across available reports from Fall 2021 through Spring 2026.",
@@ -293,8 +293,8 @@
       "category": "Teaching",
       "date": "Fall 2026",
       "title": "Online C++ course development",
-      "org": "CSA 104 · Westminster College",
-      "text": "Developed and delivered the department’s first fully online course. Redesigned CSA 104 for online C++ instruction using scaffolded modules, free learning resources, and a semester-long applied project.",
+      "org": "CSA 104 \u00b7 Westminster College",
+      "text": "Developed and delivered the department\u2019s first fully online course. Redesigned CSA 104 for online C++ instruction using scaffolded modules, free learning resources, and a semester-long applied project.",
       "tags": [
         "C++",
         "Online learning",
@@ -305,7 +305,7 @@
       "category": "Teaching",
       "date": "Course development",
       "title": "Course creation and redesign",
-      "org": "Computing and Digital Technology · Westminster College",
+      "org": "Computing and Digital Technology \u00b7 Westminster College",
       "text": "Created or substantially redesigned courses in digital media, graphic design, media and human behavior, cybersecurity, and content creation.",
       "tags": [
         "Curriculum",
@@ -317,9 +317,9 @@
       "category": "Leadership",
       "date": "2026",
       "title": "Proposed BA in Computer Science",
-      "org": "Curricular leadership · Westminster College",
+      "org": "Curricular leadership \u00b7 Westminster College",
       "text": "Lead author of the proposed 51-hour degree, including curriculum mapping, four-year sequencing, assessment planning, program transition, resource analysis, and external-review materials. Under review in the September 2026 CV.",
-      "status": "Proposal · under review",
+      "status": "Proposal \u00b7 under review",
       "tags": [
         "Leadership",
         "Curriculum",
@@ -330,9 +330,9 @@
       "category": "Leadership",
       "date": "2026",
       "title": "Digital content and sports media certificate proposals",
-      "org": "Curricular leadership · Westminster College",
+      "org": "Curricular leadership \u00b7 Westminster College",
       "text": "Developed proposals for a 12-hour Digital Content Creation Certificate and a 15-hour Sports Media and Content Creation Certificate. Under review in the September 2026 CV.",
-      "status": "Proposals · under review",
+      "status": "Proposals \u00b7 under review",
       "tags": [
         "Leadership",
         "Digital media",
@@ -343,9 +343,9 @@
       "category": "Leadership",
       "date": "Fall 2026",
       "title": "18 course-level curriculum actions",
-      "org": "Curricular leadership · Westminster College",
+      "org": "Curricular leadership \u00b7 Westminster College",
       "text": "Prepared 12 general-education designation proposals, four prerequisite revisions, and two consolidated Computing and Digital Technology capstone proposals. Under review in the September 2026 CV.",
-      "status": "Proposals · under review",
+      "status": "Proposals \u00b7 under review",
       "tags": [
         "Leadership",
         "Curriculum",
@@ -366,7 +366,7 @@
     },
     {
       "category": "Leadership",
-      "date": "2025–present",
+      "date": "2025\u2013present",
       "title": "Curriculum Committee",
       "org": "Westminster College",
       "text": "College service.",
@@ -377,7 +377,7 @@
     },
     {
       "category": "Leadership",
-      "date": "2024–2026",
+      "date": "2024\u20132026",
       "title": "Teaching and Learning Committee",
       "org": "Westminster College",
       "text": "College service.",
@@ -388,7 +388,7 @@
     },
     {
       "category": "Leadership",
-      "date": "2023–2025",
+      "date": "2023\u20132025",
       "title": "WATT Committee",
       "org": "Westminster College",
       "text": "College service.",
@@ -398,7 +398,7 @@
     },
     {
       "category": "Leadership",
-      "date": "2023–2024",
+      "date": "2023\u20132024",
       "title": "Faculty Personnel Committee",
       "org": "Westminster College",
       "text": "College service.",
@@ -422,7 +422,7 @@
       "date": "2021, 2025 and 2026",
       "title": "Hancock Symposium session moderator",
       "org": "Westminster College",
-      "text": "Session moderator in 2021 and 2025. Moderated “Asians of Change in American Sports,” presented by Michael Kim, September 15, 2026.",
+      "text": "Session moderator in 2021 and 2025. Moderated \u201cAsians of Change in American Sports,\u201d presented by Michael Kim, September 15, 2026.",
       "tags": [
         "Service",
         "Digital culture"
@@ -452,7 +452,7 @@
     },
     {
       "category": "Leadership",
-      "date": "2021–2026",
+      "date": "2021\u20132026",
       "title": "Consortium for Computing Sciences in Colleges",
       "org": "Professional organization",
       "text": "Professional organization affiliation as listed in the 2026 CV.",
@@ -464,7 +464,7 @@
     {
       "category": "Awards",
       "date": "2024",
-      "title": "Dean’s Outstanding Junior Faculty Award",
+      "title": "Dean\u2019s Outstanding Junior Faculty Award",
       "org": "Westminster College",
       "text": "Award and honor listed in the 2026 CV.",
       "tags": [
@@ -480,6 +480,28 @@
       "text": "Award and honor listed in the 2026 CV.",
       "tags": [
         "Award"
+      ]
+    },
+    {
+      "category": "Digital projects",
+      "date": "2026\u2013Present",
+      "title": "The Daily Gathering",
+      "org": "Founder, Lead Developer & Platform Architect | Independent Digital Development Project",
+      "text": "Founded, designed, and developed a free digital learning and community platform integrating full-stack web technologies, generative AI, automated publishing workflows, cloud infrastructure, and interactive educational resources. Architected human-supervised content production systems, privacy-conscious community features, and responsive digital experiences. Relevant expertise: Full-stack development, generative AI, cloud deployment, workflow automation, digital accessibility, instructional design, and systems integration.",
+      "url": "https://dailygathr.org/",
+      "status": "Independent, noncommercial project",
+      "tags": [
+        "Full-stack development",
+        "Generative AI",
+        "Cloudflare",
+        "Workflow automation",
+        "Digital accessibility",
+        "Instructional design",
+        "Systems integration",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Google Gemini"
       ]
     }
   ],
